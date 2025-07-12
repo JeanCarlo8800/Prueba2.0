@@ -1,0 +1,210 @@
+/* --- Título principal animado --- */
+h1 span.bg-clip-text {
+    background-size: 200% 200%;
+    animation: gradient-move 3s ease-in-out infinite alternate;
+    filter: drop-shadow(0 2px 16px #a855f7aa);
+}
+@keyframes gradient-move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* --- Efecto de brillo animado en títulos de sección --- */
+.section h2 {
+    position: relative;
+    background: linear-gradient(90deg, #a855f7 0%, #4f46e5 50%, #a855f7 100%);
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine-title 4s linear infinite;
+    filter: drop-shadow(0 2px 12px #a855f744);
+}
+@keyframes shine-title {
+    to { background-position: 200% center; }
+}
+
+/* --- Sombra y animación de color en títulos de tarjetas de servicio --- */
+.service-card h3 {
+    text-shadow: 0 2px 12px #a855f744, 0 1px 0 #fff2;
+    transition: color 0.4s;
+}
+.service-card:hover h3 {
+    color: #a855f7;
+    text-shadow: 0 4px 24px #a855f7aa, 0 1px 0 #fff4;
+}
+
+/* --- Animación de subrayado en enlaces de navegación --- */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+.nav-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: 8px;
+    height: 2px;
+    background: linear-gradient(90deg, #a855f7, #4f46e5);
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.3s;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+    opacity: 1;
+    transform: scaleX(1);
+    left: 10%;
+    right: 10%;
+}
+
+/* --- Efecto de resplandor en el botón principal --- */
+.cta-button {
+    box-shadow: 0 0 24px 0 #a855f755, 0 2px 8px #4f46e544;
+}
+.cta-button:hover {
+    box-shadow: 0 0 40px 0 #a855f7bb, 0 4px 16px #4f46e588;
+}
+
+/* --- Cambia la fuente global a Montserrat --- */
+body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    background-color: #0a0a0a;
+    color: #e5e7eb;
+}
+
+/* --- Títulos con peso extra y tracking ajustado --- */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+/* --- Fondo Animado --- */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+}
+.shape1 {
+    width: 400px;
+    height: 400px;
+    background: #6366f1; /* Indigo */
+    top: -50px;
+    left: -50px;
+    animation: move 20s infinite alternate;
+}
+.shape2 {
+    width: 300px;
+    height: 300px;
+    background: #a855f7; /* Purple */
+    bottom: -50px;
+    right: -50px;
+    animation: move 25s infinite alternate-reverse;
+}
+@keyframes move {
+    from { transform: translate(0, 0) rotate(0deg); }
+    to { transform: translate(200px, 100px) rotate(180deg); }
+}
+
+/* --- Estilo Glassmorphism para Sidebar y Tarjetas --- */
+.glass-effect {
+    background: rgba(17, 24, 39, 0.6); /* gray-900 con transparencia */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Enlace de Navegación Activo --- */
+.nav-link.active {
+    background-color: #4f46e5; /* Indigo-600 */
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+}
+.nav-link:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Animación de Entrada --- */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1), transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1);
+}
+.reveal-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Estilo de Tarjetas de Servicio con Hover 3D --- */
+.service-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+.service-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Botón Principal con Gradiente y Animación --- */
+.cta-button {
+    background-image: linear-gradient(to right, #4f46e5, #a855f7);
+    transition: all 0.3s ease;
+    background-size: 200% auto;
+}
+.cta-button:hover {
+    background-position: right center;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.4);
+}
+
+/* --- Footer Mejorado con Animaciones --- */
+footer {
+    position: relative;
+    overflow: hidden;
+}
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a855f7aa, transparent);
+    animation: glow-border 4s linear infinite;
+    opacity: 0.6;
+}
+@keyframes glow-border {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+}
+footer a:hover svg {
+    filter: drop-shadow(0 0 8px #a855f7aa);
+}
+/* --- Efecto 3D en título --- */
+h1.hero-3d {
+  text-shadow: 1px 1px 0 #4f46e5,   /* Indigo-600 */
+               2px 2px 0 #6366f1,
+               3px 3px 2px rgba(0,0,0,0.3);
+  transform: perspective(500px) rotateX(5deg) rotateY(-5deg);
+  transition: transform 0.5s ease;
+}
+
+h1.hero-3d:hover {
+  transform: perspective(500px) rotateX(0deg) rotateY(0deg) scale(1.05);
+  text-shadow: 2px 2px 0 #6366f1,
+               4px 4px 8px rgba(0,0,0,0.4);
+}
